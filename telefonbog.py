@@ -1,3 +1,5 @@
+from validate_phonenumber import valider_telefonnummer
+
 contacts = {
     "Anna": "23456789",
     "Bjørn": "99887766",
@@ -7,7 +9,17 @@ contacts = {
 # Funktioner
 def add_contact():
     new_person = input("Skriv navnet på ny person her:")
-    new_number = input("Skriv personens nummer her: ")
+
+    while True:
+        new_number = input("Skriv personens nummer her: ")
+        
+        # Validerer nummeret med funktionen
+        if valider_telefonnummer(new_number):
+            contacts[new_person] = new_number
+            print(f"'{new_person}' blev tilføjet med succes!")
+            break
+        else:
+            print("Ugyldigt telefonnummer. Prøv venligst igen.")
 
     contacts.update({new_person: new_number})
 

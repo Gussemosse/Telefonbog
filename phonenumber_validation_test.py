@@ -11,7 +11,8 @@ from validate_phonenumber import valider_telefonnummer
         ("abcd1234", False),
         ("ab cd 12 34", False),
         ("1234567", False),
-        ("123456789", False),
+        ("1234567899", False),
+        ("111111111111", False),
     ],
 )
 def test_mange_telefonnumrer(telefonnummer, forventet):
