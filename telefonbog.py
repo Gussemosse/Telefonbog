@@ -9,10 +9,7 @@ def add_contact():
     new_person = input("Skriv navnet på ny person her:")
     new_number = input("Skriv personens nummer her: ")
 
-    new_data = {}
-    new_data.update({new_person: new_number})
-
-    contacts.update(new_data)
+    contacts.update({new_person: new_number})
 
 def find_contact():
     person = input("Skriv navn på person her: ")
