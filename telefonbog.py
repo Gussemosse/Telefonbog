@@ -1,13 +1,28 @@
+import json
 from validate_phonenumber import valider_telefonnummer
 
 contacts = {
     "Anna": "23456789",
     "Bjørn": "99887766",
-    "Clara": "11223344",
-    "Kenneth": "78 34 97 12"
+    "Clara": "11223344"
 }
 
+
 # Funktioner
+# Telefon bog json fil
+
+def gem_telefonbog():
+    with open("telefonbog.json", "w", encoding="utf-8") as f:
+        json.dump(contacts, f, ensure_ascii=False, indent=4)
+
+def læs_telefonbog():
+    with open("telefonbog.json", "r", encoding="utf-8") as f:
+        return json.load(f)
+
+# Læser selve 
+contacts = læs_telefonbog()
+
+# Program
 def add_contact():
     new_person = input("Skriv navnet på ny person her:")
 
@@ -38,6 +53,8 @@ def show_all_contacts():
 
 # Loop
 while True:
+    # Gemmer nuværende standart dict i json fil.
+
     print("\n1. Add contact")
     print("2. Find contact")
     print("3. Show all contacts")
@@ -46,6 +63,8 @@ while True:
 
     if choice == "1":
         add_contact()
+        # Gemmer ændringerne til json filen.
+        gem_telefonbog()
 
     if choice == "2":
         find_contact()
