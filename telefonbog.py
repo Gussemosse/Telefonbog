@@ -7,8 +7,8 @@ contacts = {
     "Clara": "11223344"
 }
 
-
 # Funktioner
+
 # Telefon bog json fil
 
 def gem_telefonbog():
@@ -19,7 +19,7 @@ def læs_telefonbog():
     with open("telefonbog.json", "r", encoding="utf-8") as f:
         return json.load(f)
 
-# Læser selve 
+# Læser selve contacts fra json filen, inden loopet længere nede.
 contacts = læs_telefonbog()
 
 # Program
