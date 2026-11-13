@@ -1,8 +1,6 @@
 import json
 from validate_phonenumber import valider_telefonnummer
 
-contacts = {}
-
 # Funktioner
 
 # Telefonbog json fil
@@ -14,9 +12,6 @@ def gem_telefonbog():
 def læs_telefonbog():
     with open("telefonbog.json", "r", encoding="utf-8") as f:
         return json.load(f)
-
-# Læser selve contacts fra json filen, inden loopet længere nede.
-contacts = læs_telefonbog()
 
 # Program og hoved funktioner
 def add_or_remove_contact():
@@ -60,6 +55,9 @@ def show_all_contacts():
     for key, value in contacts.items(): # Items retunerer et view objekt, som fremviser listen af et dictionaries tuple par.
         mellemrum = value.replace(" ", "") # Fjerner mellemrum, så alle telefonnumrer er ens.
         print(f"{key}: {mellemrum}")
+
+# Læser selve contacts fra json filen, inden loopet længere nede.
+contacts = læs_telefonbog()
 
 # Loop
 while True:
