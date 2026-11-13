@@ -57,6 +57,7 @@ def find_contact():
         print("Person ikke fundet")
 
 def show_all_contacts():
+    print("-----TELEFONBOG-----")
     for key, value in contacts.items(): # Items retunerer et view objekt, som fremviser listen af et dictionaries tuple par.
         mellemrum = value.replace(" ", "") # Fjerner mellemrum, så alle telefonnumrer er ens.
         print(f"{key}: {mellemrum}")
