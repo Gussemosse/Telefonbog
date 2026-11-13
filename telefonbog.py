@@ -3,7 +3,8 @@ from validate_phonenumber import valider_telefonnummer
 contacts = {
     "Anna": "23456789",
     "Bjørn": "99887766",
-    "Clara": "11223344"
+    "Clara": "11223344",
+    "Kenneth": "78 34 97 12"
 }
 
 # Funktioner
@@ -32,7 +33,8 @@ def find_contact():
 
 def show_all_contacts():
     for key, value in contacts.items(): # Items retunerer et view objekt, som fremviser listen af et dictionaries tuple par.
-        print(f"{key}: {value}")
+        mellemrum = value.replace(" ", "") # Fjerner mellemrum, så alle telefonnumrer er ens.
+        print(f"{key}: {mellemrum}")
 
 # Loop
 while True:
