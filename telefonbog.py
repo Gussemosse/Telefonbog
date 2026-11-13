@@ -5,7 +5,7 @@ contacts = {}
 
 # Funktioner
 
-# Telefon bog json fil
+# Telefonbog json fil
 
 def gem_telefonbog():
     with open("telefonbog.json", "w", encoding="utf-8") as f:
@@ -18,9 +18,9 @@ def læs_telefonbog():
 # Læser selve contacts fra json filen, inden loopet længere nede.
 contacts = læs_telefonbog()
 
-# Program
+# Program og hoved funktioner
 def add_or_remove_contact():
-    add_or_remove = input("Tryk 'a' for tilføjelse af ny kontakt og 'r' for at slette en kontakt fra telefonbogen: ")
+    add_or_remove = input("Tryk 'a' for tilføjelse af ny kontakt eller 'r' for at slette en kontakt fra telefonbogen: ")
     if add_or_remove == "a":
         new_person = input("Skriv navnet på ny person her:")
 
@@ -48,7 +48,6 @@ def add_or_remove_contact():
                 print(f"'{delete_contact}' blev fjernet med succes!")
                 del contacts[delete_contact]
 
-# Hoved funktioner
 def find_contact():
     person = input("Skriv navn på person her: ")
     if person in contacts:
