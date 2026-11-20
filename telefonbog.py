@@ -42,6 +42,7 @@ def add_or_remove_contact():
             else:
                 print(f"'{delete_contact}' blev fjernet med succes!")
                 del contacts[delete_contact]
+                break
 
 def find_contact():
     person = input("Skriv navn på person her: ")
